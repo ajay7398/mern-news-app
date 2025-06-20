@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://musical-gumdrop-457294.netlify.app' // your frontend domain
+    'https://radiant-unicorn-d21754.netlify.app'
   ],
   credentials: true
 }));
