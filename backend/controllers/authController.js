@@ -34,7 +34,7 @@ const signup = async (req, res) => {
     const newUser = new User({ username, email, password: hashedPassword });
     await newUser.save();
 
-    return res.status(200).json({user:newUser.username, message: 'Login successful' });
+    return res.status(200).json({user:newUser.username, message: 'Sign up successful' });
 
   } catch (err) {
     console.error(err);
@@ -46,7 +46,7 @@ const signup = async (req, res) => {
 
 // ======================= Login Controller =======================
 const login = async (req, res) => {
-
+console.log("this is login conroller")
   try {
 
      const { error, value } = loginSchema.validate(req.body, { abortEarly: false });
@@ -81,13 +81,16 @@ const login = async (req, res) => {
     });
 
     // Set token as HTTP-only cookie
-  res.cookie('token', token, {
+res.cookie("token", token, {
   httpOnly: true,
-  secure: true,       // must be true on prod with HTTPS
-  sameSite: 'lax',    // more permissive than 'strict' for cross-site
+  secure: true,
+  sameSite: "None",
   maxAge: 60 * 60 * 1000,
 });
 
+
+
+console.log(token)
 
     return res.status(200).json({user:user.username, message: 'Login successful' });
 
