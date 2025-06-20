@@ -1,0 +1,12 @@
+# .gitignore (in MyNewsProject/)
+# Backend
+/backend/node_modules
+/backend/.env
+
+# Frontend
+/News/node_modules
+/News/.env
+/News/dist
+
+# Common
+.DS_Store
