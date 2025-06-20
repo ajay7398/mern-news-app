@@ -13,9 +13,10 @@ dotenv.config();
 
 
 app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true, // Allow cookies
+  origin: ['http://localhost:5173', 'https://musical-gumdrop-457294.netlify.app'],
+  credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
