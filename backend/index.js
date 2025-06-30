@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://radiant-unicorn-d21754.netlify.app'
+    'https://dailysphere.netlify.app/news'
   ],
   credentials: true
 }));
